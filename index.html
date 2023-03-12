@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>Project Title</title>
+  <title>American Sign Language recognition</title>
   <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
   <link href="css/frame.css" media="screen" rel="stylesheet" type="text/css" />
   <link href="css/controls.css" media="screen" rel="stylesheet" type="text/css" />
@@ -24,17 +24,18 @@
 <body>
   <div class="menu-container"></div>
   <div class="content-container">
-    <div class="banner" style="background: url('img/dummy-background.jpeg') no-repeat center; background-size: cover; height: 200px;"></div>
+    <div class="banner" style="background: url('img/hello.jpg') no-repeat center; background-size: cover; height: 200px;"></div>
     <div class="banner">
       <div class="banner-table flex-column">
         <div class="flex-row">
           <div class="flex-item flex-column">
-            <h2 class="add-top-margin-small">This is the header area</h2>
+            <h2 class="add-top-margin-small">What problem are we trying to solve?</h2>
             <p class="text">
-              Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel
-              augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget
-              condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit
-              vel, luctus pulvinar, hendrerit id, lorem.
+                Speech-to-text software exists for many languages around the world and enables 
+                us to more-easily communicate with others in the era of digital communication. 
+                However, there is a lacking of similar technologies for American Sign Language. 
+                We plan to take a step in solving this by creating a pipeline that detects and 
+                identifies 26 alphabetical letters in ASL.
             </p>
           </div>
         </div>
@@ -46,29 +47,31 @@
         <!--Start Intro-->
         <div class="flex-row">
           <div class="flex-item flex-column">
-            <img class="image" src="img/dummay-img.png">
+            <img class="image" src="img/cover.png">
           </div>
           <div class="flex-item flex-column">
             <p class="text text-large">
-              <a target="_blank" href="javascript:void(0)">Author 1</a>, author1 (at) cs.cmu.edu<br>
-              <a target="_blank" href="javascript:void(0)">Author 2</a>, author2 (at) cs.cmu.edu<br>
-              <a target="_blank" href="javascript:void(0)">Author 3</a>, author3 (at) cs.cmu.edu<br>
-              <a target="_blank" href="javascript:void(0)">Laboratory</a><br>
-              <a target="_blank" href="javascript:void(0)">Institute</a><br>
-              <a target="_blank" href="javascript:void(0)">Organization</a><br>
-              <a target="_blank" href="javascript:void(0)">Street Address</a><br>
-              <a target="_blank" href="javascript:void(0)">City, State, Country</a>
+              Sparsh Binjrajka, sbinj (at) uw.edu<br>
+              Duncan Du, wenyudu (at) cs.washington.edu<br>
+              Aldrich Fan, longxf (at) uw.edu<br>
+              Josh Ning, long2000 (at) cs.washington.edu<br>
+              <a target="_blank" href="http://cs.washington.edu/">Paul G. Allen School<br>of Computer Science & Engineering</a><br>
+              <a target="_blank" href="http://www.washington.edu/">University of Washington</a><br>
+              185 E Stevens Way NE<br>
+              Seattle, WA 98195-2350
             </p>
           </div>
         </div>
         <div class="flex-row">
           <div class="flex-item flex-column">
             <p class="text add-top-margin">
-              Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel
-              augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget
-              condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit
-              vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae
-              sapien ut libero venenatis faucibus. Nullam quis ante.
+                We are creating a ML pipe line that detects and identifies the 26 letters of the ASL 
+                Alphabets in a video or webcam format. After doing some research, we found some existing 
+                work on this topic already. However, we were uncertain if the dataset used is trustworthy. 
+                Because the training and testing dataset were taken in similar settings from similar 
+                angles and most were taken from the same hand, the test result could be biased and not 
+                representative of how the model performs. As such, we want to create our own dataset to 
+                validate and test against the existing model. 
             </p>
           </div>
         </div>
@@ -77,13 +80,16 @@
         <!--Start Text Only-->
         <div class="flex-row">
           <div class="flex-item flex-column">
-            <h2>Text Only</h2>
+            <h2>Existing works</h2>
             <hr>
             <p class="text">
-              Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica,
-              sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pronunciation e
-              li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar
-              custosi traductores. At solmen va esser.
+                There is an existing publication on identifying ASL Alphabets using the YOLOv5 model. 
+                YOLO by ultralytics uses anchor-free detection and new convolutional layers to make 
+                predictions faster and more accurate. The dataset the author used was small and is 
+                mostly composed of pictures of his own hands. The model still got really good results 
+                despite the constraints. Some limitations the authors pointed out was the distance of 
+                the hand gesture to the camera has an impact on the identification and the background 
+                noise does too. 
             </p>
             <p class="text">
               Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur,
