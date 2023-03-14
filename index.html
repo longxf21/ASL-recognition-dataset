@@ -65,13 +65,9 @@
         <div class="flex-row">
           <div class="flex-item flex-column">
             <p class="text add-top-margin">
-                We are creating a machine learning pipeline that detects and identifies the 26 letters of the ASL alphabet 
-                in a video or webcam format. After exploring existing work on this topic, we found a model that showed very 
-                good results. However, upon further investigation, we were uncertain if the dataset used was trustworthy. 
-                The training and testing dataset were taken in the same setting and from similar angles, with most were taken 
-                from the same hand. The test result was likely biased and not representative of how the model actually performs. 
-                This was further confirmed when we tested the exact model out and it generated poor results. As such, we want to 
-                create our own dataset to validate and test against the existing model. 
+              We are creating a machine learning pipeline that detects and identifies the 26 letters of the ASL alphabet in a video or webcam format. 
+              There are not many models that have successfully been able to classify signs in real-time. One that did show promising training results 
+              turned out to be very biased and did not perform very well when tested by us. As such, we want to create our own dataset to validate and test existing models. 
             </p>
           </div>
         </div>
@@ -83,13 +79,10 @@
             <h2>Existing works</h2>
             <hr>
             <p class="text">
-                There is an existing publication on identifying ASL Alphabets using the YOLOv5 model. 
-                YOLO by ultralytics uses anchor-free detection and new convolutional layers to make 
-                predictions faster and more accurate. The dataset the author used was small and is 
-                mostly composed of pictures of his own hands. The model still got really good results 
-                despite the constraints. Some limitations the authors pointed out was the distance of 
-                the hand gesture to the camera has an impact on the identification and the background 
-                noise does too. 
+              We found an existing publication on identifying the ASL alphabet using the YOLOv5 model. However, upon further investigation, 
+              we were uncertain if the dataset used was trustworthy. The training and testing dataset were taken in the same setting and 
+              from similar angles, with most were taken from the same hand. The test result was likely biased and not representative of how 
+              the model actually performs. This was further confirmed when we recreated the model and tested it out, getting poor results. 
             </p>
           </div>
         </div>
@@ -101,10 +94,24 @@
     <div class="content">
         <div class="flex-row">
           <div class="flex-item flex-column">
-            <h2>Text with Images and Videos</h2>
+            <h2>Methods</h2>
             <hr>
+            <div class="flex-row">
+              <div class="flex-item flex-item-stretch flex-column">
+                <iframe width="800" height="550" src="https://www.youtube.com/embed/GwvBAgATCo0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+          
+            <div class="flex-item flex-column">
+              <p class="text">
+                The idea behind this was to create a dataset that more closely resembles the environment in which an ASL 
+                recognition model might be deployed. We used our dataset to train the YOLOv8 model and, as you can see from 
+                the video, it does well for signs that are at a varying distance from the camera and is pretty accurate across 
+                all categories. There are a few that don’t quite work well like the letters “M” and “N” but that can be improved.
+              </p>
+            </div>
+          </div>
             <p class="text">
-                In exploring existing work on ASL letter detection, we found a <a target="_blank" href="javascript:void(0)">pre-trained YOLOv5 model by David Lee</a>.
+                In exploring existing work on ASL letter detection, we found a <a target="_blank" href="https://public.roboflow.com/object-detection/american-sign-language-letters">pre-trained YOLOv5 model by David Lee</a>.
                 A video demonstrating the results of the model shows almost all signs being detected with a confidence of at least 0.8.
             </p>
           </div>
@@ -134,10 +141,7 @@
               </p>
             </div>
             <div class="flex-item flex-item-stretch flex-column">
-              <video preload controls autoplay loop muted playsinline class="image">
-                <source src="vid/mov_bbb.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
+              <iframe width="336" height="200" src="https://www.youtube.com/embed/ldqTpmufxUM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
         </div>
         <div class="flex-row">
@@ -165,11 +169,8 @@
         </div>
         <div class="flex-row">
           <div class="flex-item flex-item-stretch flex-column">
-            <video preload controls autoplay loop muted playsinline class="image">
-              <source src="vid/mov_bbb.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
+            <iframe width="500" height="375" src="https://www.youtube.com/embed/ZxMw5Bs-zuM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
           <div class="flex-item flex-item-stretch flex-column">
             <p class="text">
                 This new model gave superior results to the previous model but it has its limitations as well (as can be seen in the video). 
@@ -182,42 +183,79 @@
             </p>
           </div>
         </div>
-        <p class="text">
-            We created our own dataset was to generate pictures that had the following features:
-        </p>
-        <ol class="nested">
-        <li>Correct signs and from the perspective of the viewer.</li>
-        <li>Different signers in varying lighting and background settings.</li>
-        <li>A mix of pictures that are close to the camera as well as further away.</li>
-        </ol>
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <p class="text">
+              We created our own dataset was to generate pictures that had the following features:
+            </p>
+            <ol class="nested">
+            <li>Correct signs and from the perspective of the viewer.</li>
+            <li>7 different signers in varying lighting and background settings.</li>
+            <li>Varying camera angles with respect to the signer.</li>
+            <li>A mix of pictures that are close to the camera as well as further away.</li>
+            </ol>
+          </div>
+      </div>
+        
         <div class="flex-row">
             <div class="flex-item flex-item-stretch flex-column">
-                <video preload controls autoplay loop muted playsinline class="image">
-                <source src="vid/mov_bbb.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-                </video>
+              <iframe width="800" height="600" src="https://www.youtube.com/embed/jvAcieWxq8A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
         
           <div class="flex-item flex-column">
             <p class="text">
-                The idea behind this was to create a “testing” dataset that could be used to validate any model that has 
-                good training results. We also used our dataset to train the YOLOv8 model and, as you can see from the video, 
-                it does well for signs that are at a varying distance from the camera and is pretty accurate across all categories. 
-                There are a few that don’t quite work well like the letters “M” and “N” but that can be improved.
+              The idea behind this was to create a dataset that more closely resembles the environment in which an ASL 
+              recognition model might be deployed. We used our dataset to train the YOLOv8 model and, as you can see from 
+              the video, it does well for signs that are at a varying distance from the camera and is pretty accurate across 
+              all categories. There are a few that don’t quite work well like the letters “M” and “N” but that can be improved.
             </p>
           </div>
         </div>
-      </div>
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <h2>Our dataset</h2>
+            <hr>
+            <p class="text">
+              Here's the link to our <a target="_blank" href="https://universe.roboflow.com/asl-classification/video-call-asl-signs">dataset</a>.
+            </p>
+          </div>
+        </div>
+        <div class="flex-row">
+          <div class="flex-item flex-column">
+            <h2>Future Works</h2>
+            <hr>
+            <h3>Word-Level Detection with Motion</h3>
+            <p class="text">
+              Currently, this model is only capable of recognising static signs - signs without any motion. However, 
+              the vast majority of ASL signs include motion. A more complicated neural network like an LSTM would be 
+              needed to extend this model to world level detection(WL-ASL) and other motion-based signs. But the same 
+              dataset-creation techniques can be used for that dataset as well.
+            </p>
+            <h3>Dataset Diversity</h3>
+            <p class="text">
+              The dataset can be further improved by including more skin-tones and different background settings. 
+              The 7 signers in the data are not a representative group of all ASL signers. A more complete dataset 
+              should include more variety in terms of age, skintone, etc. In addition, the background and lighting 
+              conditions in the dataset are limited. If a model were to be deployed in an arbitrary setting, it should 
+              contain more variety in background features like furniture and different colored walls.
+            </p>
+          </div>
+        </div>
     <div class="banner">
       <div class="banner-table flex-column">
         <div class="flex-row">
           <div class="flex-item flex-column">
             <h2>Credits</h2>
+            <hr>
             <p class="text add-bottom-margin-large">
-              Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel
-              augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget
-              condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit
-              vel, luctus pulvinar, hendrerit id, lorem.
+              David Lee’s American Sign Language Letters Dataset — Link: <br>https://public.roboflow.com/object-detection/american-sign-language-letters
+              <br>Youtube Videos:
+              <br>https://www.youtube.com/watch?v=tkMg8g8vVUo
+              <br>https://www.youtube.com/watch?v=sHyG7iz3ork
+              <br>https://www.youtube.com/watch?v=bFv_mLwBvHc
+              <br>https://www.youtube.com/watch?v=lYhAAMDQl-Q
+              <br>RobowFlow Platform for data annotation and YOLOv8 model training
+              <br>https://roboflow.com/
             </p>
           </div>
         </div>
